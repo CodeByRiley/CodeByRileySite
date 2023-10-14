@@ -19,11 +19,16 @@ for(const repo of repos){
     <Title> Projects </Title>
   </Head>
   <Navbar />
-
-  <div class="grid grid-cols-4 py-1.5 px-2.5">
-    <div v-for="project in projects" class="px-0.5">
-      <Card :project="project"/>
-    </div>
+  <div class="py-1" />
+  <div class="py-2 text-center">
+    <h1 class="text-xl font-medium">Check out some projects I'm working on.</h1>
+  </div>
+  <hr class="h-px my-4 border-gray-900">
+  <div class="py-1"></div>
+  <div class="container m-auto grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-2.5">
+      <div v-for="project in projects" class=" col-span-2 ">
+        <Card :project="project"/>
+      </div>
   </div>
 
 </template>

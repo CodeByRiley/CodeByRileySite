@@ -40,7 +40,6 @@
       <span />
     </div>
   </nav>
-  <div class="py-2"/>
 </template>
 <style scoped>
 

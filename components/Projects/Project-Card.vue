@@ -1,29 +1,63 @@
 <script setup lang="ts">
 import ProjectCard from "~/components/Projects/ProjectCard";
-defineProps({
+import {querySelector} from "ultrahtml/selector";
+const props = defineProps({
   project: {
     type: ProjectCard,
     required: true
   }
 });
-</script>
+let url = props.project.source;
+let fadeIn:boolean = false;
 
+</script>
 <template>
-  <div class="bg-white rounded-lg shadow border border-neutral-700 dark:bg-neutral-800">
-    <div class="px-2.5 py-1.5">
-      <a>
-        <h5 class="tracking-tight font-medium text-slate-300 dark:text-slate-300">{{project.name}}</h5>
+
+  <div class="bg-white rounded-lg shadow border border-neutral-700 dark:bg-neutral-800 h-[10em] hover:bg-neutral-700 dark:hover:bg-neutral-700">
+    <span class="flex-nowrap block">
+      <a :href="project.source">
+        <div class="flex h-32" style="z-index: 2">
+          <div class="px-2.5 py-1.5">
+            <a>
+              <h5 class="tracking-tight font-medium text-slate-300 dark:text-slate-300">{{project.name}}</h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{project.description}}</p>
+          </div>
+        </div>
+        <p class="opacity-10 text-center">view source</p>
       </a>
-      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{project.description}}</p>
-      <a href="{{project.source}}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-        View source
-        <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-        </svg>
-      </a>
-    </div>
+    </span>
   </div>
 </template>
+<script lang="ts">
 
+</script>
 <style scoped>
+.fade-in{
+  @apply bg-neutral-800;
+  opacity: 100;
+  transition: opacity 220ms ease-in-out;
+}
+.fade-in:not(:hover){
+  @apply bg-neutral-800;
+  opacity: 0;
+  transition: opacity 220ms ease-in-out;
+}
+.fade-in:hover{
+  @apply bg-neutral-800;
+  opacity: 100;
+  transition: opacity 220ms ease-in-out;
+}
+.fade-out {
+  opacity: 0;
+  transition: opacity 220ms ease-in-out;
+}
+.fade-out:hover{
+  opacity: 0;
+  transition: opacity 220ms ease-in-out;
+}
+.fade-out:not(:hover) {
+  opacity: 100;
+  transition: opacity 220ms ease-in-out;
+}
 </style>
