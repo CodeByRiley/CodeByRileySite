@@ -6,14 +6,18 @@ import NavBar from "~/components/navbar.vue";
       <Title> Mathew </Title>
     </Head>
     <NavBar />
-    <div>
-      <h1> Hello!</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Accusantium ad beatae consequuntur eius fugiat laborum obcaecati quibusdam repellendus tempore!
-        Cupiditate dignissimos doloremque facere maxime praesentium qui repellendus. Dicta, error voluptatem.
+    <div class="header flex justify-center">
+      <h1 > Hey! </h1>
+      <hr>
+    </div>
+    <div class="flex justify-center">
+      <p> My name is Mathew and I'm currently learning Computer Science on my own,
       </p>
     </div>
 
   </template>
 <style scoped>
+.header {
+  font-size: 2em;
+}
 </style>
