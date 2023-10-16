@@ -3,6 +3,11 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/ui'],
-  ssr: false
-
+  ssr: false,
+  app: {
+    pageTransition: {
+        name: 'fade',
+        mode: 'out-in'
+    }
+  },
 });
