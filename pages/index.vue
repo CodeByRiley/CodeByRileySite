@@ -1,3 +1,4 @@
+<!--suppress CssUnusedSymbol -->
 <script setup lang="ts">
 import NavBar from "~/components/navbar.vue";
 </script>
