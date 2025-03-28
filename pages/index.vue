@@ -27,11 +27,11 @@ import NavBar from "~/components/navbar.vue";
 
               <div class="">
                 <p class="">
-                  My name is Mathew and I'm a self-learnt software developer.
+                  My name is Mathew and I'm a self-taught software developer.
                   <br>
                   This site is a hobby project I'm working on.
                   <br>
-                  A short introduction about me; I'm an 18 year old developer from Australia.
+                  A short introduction about me; I'm an 19 year old developer from Australia.
                   <br>
                   I'm currently learning C++, C# and a few others. I'm learning about web development in my free time.
                   <br>
