@@ -26,7 +26,7 @@ import NavBar from "~/components/navbar.vue";
                <div class="bg-neutral-800">
                  <a href="https://discord.com/users/202862911398346753">
                    <img src="/icons/icons8-discord.svg" class="m-auto h-[64px] w-[64px]"/>
-                   <span class=""> .wafflerthesecond </span>
+                   <span class=""> .waffler </span>
                  </a>
                </div>
              </div>
