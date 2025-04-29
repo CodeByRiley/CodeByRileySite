@@ -31,7 +31,7 @@ import NavBar from "~/components/navbar.vue";
                   <br>
                   This site is a hobby project I'm working on.
                   <br>
-                  A short introduction about me; I'm an 19 year old developer from Australia.
+                  A short introduction about me; I'm a 20 year old developer from Australia.
                   <br>
                   I'm currently learning C++, C# and a few others. I'm learning about web development in my free time.
                   <br>
