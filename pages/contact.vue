@@ -1,15 +1,14 @@
 <!--suppress CssUnusedSymbol -->
 <script setup lang="ts">
 import NavBar from "~/components/navbar.vue";
+import Footer from "~/components/footer.vue";
 </script>
 
 <template>
- <div>
+ <div class="min-h-screen flex flex-col">
    <div>
-     <Head>
-       <Title> Contact </Title>
-     </Head>
      <NavBar />
+     <Footer />
    </div>
    <div class="py-1" />
    <div class="flex justify-center">
@@ -17,7 +16,7 @@ import NavBar from "~/components/navbar.vue";
    </div>
    <div class="m-6"/>
    <transition name="fade" mode="out-in">
-     <div>
+     <div class="flex-grow">
        <div class="block">
          <div class="flex justify-center">
            <div class="w-[13.5em] text-center">
@@ -28,6 +27,22 @@ import NavBar from "~/components/navbar.vue";
                    <img src="/icons/icons8-discord.svg" class="m-auto h-[64px] w-[64px]"/>
                    <span class=""> .waffler </span>
                  </a>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+       <div class="py-[1em]"></div>
+       <div class="block">
+         <div class="flex justify-center">
+           <div class="w-[13.5em] text-center">
+             <div class="gmail border border-neutral-700">
+               <h1 class="text-light text-center bg-neutral-900"> Check out my Github </h1>
+               <div class="bg-neutral-800">
+                   <a href="github.com/CodeByRiley/">
+                    <img src="/icons/icons8-github.svg" class="m-auto h-[64px] w-[64px]"/>
+                    <span class=""> CodeByRiley@Github </span>
+                   </a>
                </div>
              </div>
            </div>

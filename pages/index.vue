@@ -1,19 +1,18 @@
 <!--suppress CssUnusedSymbol -->
 <script setup lang="ts">
 import NavBar from "~/components/navbar.vue";
+import Footer from "~/components/footer.vue";
 </script>
 <script lang="ts">
 
 </script>
   <template>
-    <div>
-      <Head>
-        <Title> CodeByRiley </Title>
-      </Head>
+    <div class="min-h-screen flex flex-col">
       <NavBar />
+      <Footer class="" />
       <Transition name="fade" mode="out-in">
-        <div class="relative">
-          <div class="flex justify-center relative w-full" style="height:calc(100vh - 4rem)">
+        <div class="relative flex-grow">
+          <div class="flex flex-grow justify-center relative w-full" style="height:calc(100vh - 4rem)">
             <img src="/images/background.png" class="image-gradient blur-sm w-full h-full object-cover">
             <div class="overlay-text absolute inset-0 flex flex-col items-center justify-center">
               <div class="max-w-2xl px-4">
@@ -56,8 +55,7 @@ import NavBar from "~/components/navbar.vue";
         </div>
       </Transition>
     </div>
-
-</template>
+  </template>
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {

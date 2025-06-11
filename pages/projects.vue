@@ -1,6 +1,7 @@
 <!--suppress CssUnusedSymbol -->
 <script setup lang="ts">
 import Navbar from "~/components/navbar.vue";
+import Footer from "~/components/footer.vue";
 import Card from "~/components/Projects/Project-Card.vue";
 import ProjectCard from "~/components/Projects/ProjectCard";
 import {Octokit} from "@octokit/rest";
@@ -9,7 +10,7 @@ let projects: ProjectCard[] = [];
 
 
 const {data: repos} = await octokit.rest.repos.listForUser({
-  username: "viadot"
+  username: "codebyriley"
 });
 for(const repo of repos){
   console.log(repo.html_url);
@@ -20,14 +21,12 @@ for(const repo of repos){
 
 </script>
 <template>
-  <div>
-    <Head>
-      <Title> Projects </Title>
-    </Head>
+  <div class="min-h-screen flex flex-col">
+    <Footer />
     <Navbar />
     <div class="py-1" />
     <Transition name="fade" mode="out-in">
-      <div>
+      <div class="flex-grow">
         <div class="py-2 text-center rounded mx-[30.5em]">
           <h1 class="text-xl font-medium flex-wrap">Check out some projects I'm working on.</h1>
         </div>
@@ -39,10 +38,7 @@ for(const repo of repos){
         </TransitionGroup>
       </div>
     </Transition>
-
   </div>
-
-
 </template>
 <style scoped>
 .fade-enter-active, .fade-leave-active {
