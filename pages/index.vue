@@ -7,39 +7,49 @@ import NavBar from "~/components/navbar.vue";
 </script>
   <template>
     <div>
-      <div>
-        <Head>
-          <Title> Mathew </Title>
-        </Head>
-        <NavBar />
-      </div>
-      <div class="py-1" />
+      <Head>
+        <Title> CodeByRiley </Title>
+      </Head>
+      <NavBar />
       <Transition name="fade" mode="out-in">
-
-        <div class="flex justify-center">
-          <img src="/images/background2.png" class="image-gradient blur-sm" style="width: 70%; height: 70%;">
-          <div class="overlay-text">
-            <div class="">
-              <h1 class="text-2xl font-medium text-center"> Hey! </h1>
-              <hr>
-            </div>
-            <div class="">
-
-              <div class="">
-                <p class="">
-                  My name is Mathew and I'm a self-taught software developer.
+        <div class="relative">
+          <div class="flex justify-center relative w-full" style="height:calc(100vh - 4rem)">
+            <img src="/images/background.png" class="image-gradient blur-sm w-full h-full object-cover">
+            <div class="overlay-text absolute inset-0 flex flex-col items-center justify-center">
+              <div class="max-w-2xl px-4">
+                <h1 class="text-2xl font-medium text-center"> Hey! </h1>
+                <hr class="w-80 h-1 mx-auto my-4 rounded-sm">
+                <p class="text-lg">
+                  I'm Riley — a 20-year-old self-taught software developer from Australia. 
                   <br>
-                  This site is a hobby project I'm working on.
+                  I'm passionate about learning new programming languages and technologies. <br>
+                  Currently, I'm diving into C++ and C#, while also exploring web development in my free time. 
                   <br>
-                  A short introduction about me; I'm a 20 year old developer from Australia.
+                  I'm building this website as a hobby project, using NuxtJS and TailwindCSS to create something unique. 
                   <br>
-                  I'm currently learning C++, C# and a few others. I'm learning about web development in my free time.
-                  <br>
-                  This website is a hobby project I'm working on, I'm using NuxtJS and TailwindCSS.
-                  <br>
-                  If you want to check out some of my other projects you can click <NuxtLink to="/projects" class="text-slate-400 hover:underline">here</NuxtLink>,
-                  or check out my github <NuxtLink to="https://github.com/viadot/" class="text-slate-400 hover:underline">here</NuxtLink>.
+                  Check out my work on GitHub <a href="https://github.com/viadot/" class="text-blue-400 hover:text-blue-300">here!</a>
                 </p>
+                <hr class="w-80 h-1 mx-auto my-4 rounded-sm">
+                <div class="mt-8">
+                  <h2 class="text-xl font-semibold text-center mb-4">Skills & Technologies</h2>
+                  <div class="flex flex-wrap justify-center gap-3">
+                    <span class="bg-neutral-800 text-slate-200 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                    <span class="bg-neutral-800 text-slate-200 px-3 py-1 rounded-full text-sm">TypeScript</span>
+                    <span class="bg-neutral-800 text-slate-200 px-3 py-1 rounded-full text-sm">Python</span>
+                    <span class="bg-neutral-800 text-slate-200 px-3 py-1 rounded-full text-sm">C++</span>
+                    <span class="bg-neutral-800 text-slate-200 px-3 py-1 rounded-full text-sm">C#</span>
+                    <span class="bg-neutral-800 text-slate-200 px-3 py-1 rounded-full text-sm">Vue.js</span>
+                    <span class="bg-neutral-800 text-slate-200 px-3 py-1 rounded-full text-sm">Nuxt.js</span>
+                    <span class="bg-neutral-800 text-slate-200 px-3 py-1 rounded-full text-sm">Node.js</span>
+                    <span class="bg-neutral-800 text-slate-200 px-3 py-1 rounded-full text-sm">Express</span>
+                    <span class="bg-neutral-800 text-slate-200 px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+                    <span class="bg-neutral-800 text-slate-200 px-3 py-1 rounded-full text-sm">Git</span>
+                    <span class="bg-neutral-800 text-slate-200 px-3 py-1 rounded-full text-sm">GitHub</span>
+                    <span class="bg-neutral-800 text-slate-200 px-3 py-1 rounded-full text-sm">Linux</span>
+                    <span class="bg-neutral-800 text-slate-200 px-3 py-1 rounded-full text-sm">VS Code</span>
+                    <span class="bg-neutral-800 text-slate-200 px-3 py-1 rounded-full text-sm">Docker</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -51,7 +61,7 @@ import NavBar from "~/components/navbar.vue";
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 250ms ease-in;
+  transition: opacity 100ms ease-in;
 }
 
 .fade-enter-from,
@@ -61,7 +71,7 @@ import NavBar from "~/components/navbar.vue";
 .overlay-text {
   @apply text-center;
   @layer text-1xl;
-  position: absolute;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
 }
 .image-gradient {
   -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));

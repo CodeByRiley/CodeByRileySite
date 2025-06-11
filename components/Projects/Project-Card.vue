@@ -13,7 +13,7 @@ let fadeIn:boolean = false;
 </script>
 <template>
 
-  <div class="bg-white rounded-lg shadow border border-neutral-700 dark:bg-neutral-800 h-[10em] hover:bg-neutral-700 dark:hover:bg-neutral-700">
+  <div class="bg-white rounded-lg shadow border border-neutral-700 dark:bg-neutral-800 h-[10em] hover:bg-neutral-700 dark:hover:bg-neutral-700 transition-all duration-300 ease-in-out hover:scale-105 hover:z-10 relative">
     <span class="flex-nowrap block">
       <a :href="project.source">
         <div class="flex h-32" style="z-index: 2">

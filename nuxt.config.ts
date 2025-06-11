@@ -1,13 +1,24 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   modules: ['@nuxt/ui'],
   ssr: false,
   app: {
+    head:{
+      title: "CodeByRiley",
+      meta: [
+        { name: 'description', content: 'CodeByRiley is a website for Riley, a 20-year-old self-taught software developer from Australia.' },
+        { name: 'keywords', content: 'Riley, Software Developer, Code, RileyDev, RileyDevs, RileyDevs.com' },
+        { name: 'author', content: 'RileyDev' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { charset: 'utf-8' }
+      ]
+    },
     pageTransition: {
         name: 'fade',
         mode: 'out-in'
     }
   },
+  
 });

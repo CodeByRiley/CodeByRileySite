@@ -58,7 +58,7 @@ import NavBar from "~/components/navbar.vue";
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 250ms ease-in;
+  transition: opacity 100ms ease-in;
 }
 
 .fade-enter-from,
