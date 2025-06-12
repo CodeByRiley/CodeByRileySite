@@ -9,11 +9,11 @@ import Footer from "~/components/footer.vue";
   <template>
     <div class="min-h-screen flex flex-col">
       <NavBar />
-      <Footer class="" />
+      <Footer class="z-10" />
       <Transition name="fade" mode="out-in">
         <div class="relative flex-grow">
           <div class="flex flex-grow justify-center relative w-full" style="height:calc(100vh - 4rem)">
-            <img src="/images/background.png" class="image-gradient blur-sm w-full h-full object-cover">
+            <img src="/images/background.png" class="image-gradient blur-sm w-full h-full object-cover z-0">
             <div class="overlay-text absolute inset-0 flex flex-col items-center justify-center">
               <div class="max-w-2xl px-4">
                 <h1 class="text-2xl font-medium text-center"> Hey! </h1>
