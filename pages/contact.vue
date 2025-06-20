@@ -39,7 +39,7 @@ import Footer from "~/components/footer.vue";
              <div class="gmail border border-neutral-700">
                <h1 class="text-light text-center bg-neutral-900"> Check out my Github </h1>
                <div class="bg-neutral-800">
-                   <a href="github.com/CodeByRiley/">
+                   <a href="https://github.com/CodeByRiley/">
                     <img src="/icons/icons8-github.svg" class="m-auto h-[64px] w-[64px]"/>
                     <span class=""> CodeByRiley@Github </span>
                    </a>
