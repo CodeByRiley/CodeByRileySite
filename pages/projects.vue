@@ -16,7 +16,21 @@ const error = ref<string | null>(null);
 
 // Fetch projects with caching
 const fetchProjects = async () => {
-  // Check for cached data on client side
+  // Always fetch fresh data on server side
+  if (process.server) {
+    try {
+      const data = await $fetch<Project[]>('/api/projects');
+      projects.value = data;
+    } catch (err) {
+      error.value = 'Failed to fetch projects';
+      console.error('Error fetching projects:', err);
+    } finally {
+      loading.value = false;
+    }
+    return;
+  }
+
+  // Client-side caching logic
   if (process.client) {
     const cached = sessionStorage.getItem('projects-cache');
     const cacheTimestamp = sessionStorage.getItem('projects-cache-timestamp');
@@ -39,7 +53,7 @@ const fetchProjects = async () => {
     }
   }
 
-  // Fetch fresh data
+  // Fetch fresh data on client side
   try {
     const data = await $fetch<Project[]>('/api/projects');
     projects.value = data;
