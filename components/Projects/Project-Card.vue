@@ -1,16 +1,27 @@
 <script setup lang="ts">
-import { querySelector } from "ultrahtml/selector";
 const props = defineProps({
   project: {
     type: Object,
     required: true,
     validator: (value: any) => {
-      return value && typeof value.name === 'string' && 
-            typeof value.description === 'string' && 
-            typeof value.source === 'string';
+      return value && typeof value.name === 'string' &&
+        typeof value.description === 'string' &&
+        typeof value.source === 'string';
     }
   }
 });
+
+class ProjectCard {
+  name: string;
+  description: string;
+  source: string;
+  constructor(name: string, description: string, source: string) {
+    this.name = name;
+    this.description = description;
+    this.source = source;
+  }
+}
+
 let url = props.project.source;
 let fadeIn: boolean = false;
 </script>

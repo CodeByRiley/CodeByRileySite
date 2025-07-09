@@ -19,7 +19,7 @@ const isOpen = ref(false)
         <ul
           class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-neutral-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-neutral-700 md:dark:bg-neutral-800 dark:border-neutral-700">
           <li>
-            <NuxtLink to="/"
+            <NuxtLink to="/home"
               exact-active-class="block py-2 pl-3 pr-4 text-slate-400 rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-neutral-500 md:p-0 dark:text-white md:dark:hover:text-neutral-450 font-bold"
               class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-neutral-500 md:p-0 dark:text-white md:dark:hover:text-neutral-450">
               About Me
@@ -30,6 +30,13 @@ const isOpen = ref(false)
               exact-active-class="block py-2 pl-3 pr-4 text-slate-400 rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-neutral-500 md:p-0 dark:text-white md:dark:hover:text-neutral-450 font-bold"
               class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-neutral-500 md:p-0 dark:text-white md:dark:hover:text-neutral-450">
               My Projects
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/blogs"
+              exact-active-class="block py-2 pl-3 pr-4 text-slate-400 rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-neutral-500 md:p-0 dark:text-white md:dark:hover:text-neutral-450 font-bold"
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-neutral-500 md:p-0 dark:text-white md:dark:hover:text-neutral-450">
+              Blog
             </NuxtLink>
           </li>
           <li>
@@ -39,6 +46,7 @@ const isOpen = ref(false)
               Contact
             </NuxtLink>
           </li>
+          
         </ul>
       </div>
     </div>
@@ -48,7 +56,7 @@ const isOpen = ref(false)
         <ul
           class="font-medium flex flex-col p-2 mt-2 border border-gray-100 bg-neutral-50 dark:bg-neutral-700 dark:border-neutral-700">
           <li>
-            <NuxtLink to="/"
+            <NuxtLink to="/home"
               exact-active-class="block py-2 pl-3 pr-4 text-slate-400 rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-neutral-500 md:p-0 dark:text-white md:dark:hover:text-neutral-450 font-bold"
               class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-neutral-500 md:p-0 dark:text-white md:dark:hover:text-neutral-450">
               About Me
@@ -59,6 +67,13 @@ const isOpen = ref(false)
               exact-active-class="block py-2 pl-3 pr-4 text-slate-400 rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-neutral-500 md:p-0 dark:text-white md:dark:hover:text-neutral-450 font-bold"
               class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-neutral-500 md:p-0 dark:text-white md:dark:hover:text-neutral-450">
               My Projects
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/blogs"
+              exact-active-class="block py-2 pl-3 pr-4 text-slate-400 rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-neutral-500 md:p-0 dark:text-white md:dark:hover:text-neutral-450 font-bold"
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-neutral-500 md:p-0 dark:text-white md:dark:hover:text-neutral-450">
+              Blog
             </NuxtLink>
           </li>
           <li>

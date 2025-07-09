@@ -1,14 +1,20 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from 'nuxt/config'
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-06-11',
-  modules: ['@nuxt/ui', 'nuxt-vercel-analytics'],
-  ssr: true,
-  nitro: {
-    prerender: {
-      routes: ['/projects']
-    }
+  modules: ['@nuxt/ui', 'nuxt-vercel-analytics', '@nuxt/content'],
+
+  content: {
+    
   },
+
+  ssr: true,
+
+  nitro: {
+    // Remove prerender for dynamic deployment
+  },
+
   app: {
     head: {
       title: "CodeByRiley",
@@ -23,7 +29,11 @@ export default defineNuxtConfig({
     pageTransition: {
       name: 'fade',
       mode: 'out-in'
-    }
+    },
+
   },
 
+  devtools: {
+    enabled: true
+  }
 });

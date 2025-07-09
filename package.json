@@ -3,23 +3,27 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/generate-projects.js && nuxt build",
+    "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "node scripts/generate-projects.js && nuxt generate",
+    "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "generate-projects": "node scripts/generate-projects.js"
   },
   "devDependencies": {
+    "@nuxt/content": "^3.6.3",
     "@nuxt/devtools": "latest",
     "nuxt": "^3.6.5",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@nuxt/content": "^3.6.3",
     "@nuxt/ui": "^2.9.0",
     "@octokit/rest": "^20.0.2",
     "@vercel/analytics": "^1.5.0",
+    "better-sqlite3": "^12.2.0",
+    "nuxi": "^3.25.1",
     "nuxt-vercel-analytics": "^1.0.3"
   }
 }
