@@ -28,7 +28,7 @@ const formatDate = (date: string) =>
         <div v-else class="space-y-6">
           <article v-for="post in posts" :key="post.path"
             class="transform transition-transform duration-300 hover:scale-[1.02]">
-            <NuxtLink :to="`/blogs/${post.path.split('/').pop()}`" class="block">
+            <NuxtLink :to="`/blogs/${post.path?.split('/').pop()}`" class="block">
               <div class="bg-white rounded-lg shadow border border-neutral-700 dark:bg-neutral-800 p-6 hover:bg-neutral-700 dark:hover:bg-neutral-700 transition-all duration-300">
                 <div class="flex justify-between items-start mb-3">
                   <h2 class="text-xl font-semibold text-slate-300 dark:text-slate-300 hover:text-blue-400 transition-colors">
