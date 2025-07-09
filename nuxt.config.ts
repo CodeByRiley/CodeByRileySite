@@ -2,11 +2,10 @@
 import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   compatibilityDate: '2025-06-11',
-  devtools: { enabled: false },
   modules: ['@nuxt/ui', 'nuxt-vercel-analytics'],
   ssr: true,
   app: {
-    head:{
+    head: {
       title: "CodeByRiley",
       meta: [
         { name: 'description', content: 'CodeByRiley is a 20-year-old self-taught software developer from Australia.' },
@@ -17,9 +16,9 @@ export default defineNuxtConfig({
       ]
     },
     pageTransition: {
-        name: 'fade',
-        mode: 'out-in'
+      name: 'fade',
+      mode: 'out-in'
     }
   },
-  
+
 });
