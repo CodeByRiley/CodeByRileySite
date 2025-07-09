@@ -4,6 +4,11 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-06-11',
   modules: ['@nuxt/ui', 'nuxt-vercel-analytics'],
   ssr: true,
+  nitro: {
+    prerender: {
+      routes: ['/projects']
+    }
+  },
   app: {
     head: {
       title: "CodeByRiley",

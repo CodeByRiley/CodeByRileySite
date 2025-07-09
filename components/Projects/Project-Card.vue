@@ -1,10 +1,14 @@
 <script setup lang="ts">
-import ProjectCard from "~/components/Projects/ProjectCard";
 import { querySelector } from "ultrahtml/selector";
 const props = defineProps({
   project: {
-    type: ProjectCard,
-    required: true
+    type: Object,
+    required: true,
+    validator: (value: any) => {
+      return value && typeof value.name === 'string' && 
+            typeof value.description === 'string' && 
+            typeof value.source === 'string';
+    }
   }
 });
 let url = props.project.source;

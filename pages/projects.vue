@@ -1,23 +1,79 @@
 <!--suppress CssUnusedSymbol -->
 <script setup lang="ts">
-import { useAsyncData } from '#app'
 import Navbar from "~/components/navbar.vue";
 import Footer from "~/components/footer.vue";
 import Card from "~/components/Projects/Project-Card.vue";
-import ProjectCard from "~/components/Projects/ProjectCard";
-import { Octokit } from "@octokit/rest";
 
-const { data: projects } = await useAsyncData('projects', async () => {
-  const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
-  const { data: repos } = await octokit.rest.repos.listForUser({
-    username: "codebyriley"
-  });
-  return repos.map(repo => ({
-    name: repo.name,
-    description: repo.description == null ? "No description provided" : repo.description,
-    source: repo.html_url
-  }));
-});
+interface Project {
+  name: string;
+  description: string;
+  source: string;
+}
+
+const projects = ref<Project[]>([]);
+const loading = ref(true);
+const error = ref<string | null>(null);
+
+// Fetch projects with caching
+const fetchProjects = async () => {
+  // Check for cached data on client side
+  if (process.client) {
+    const cached = sessionStorage.getItem('projects-cache');
+    const cacheTimestamp = sessionStorage.getItem('projects-cache-timestamp');
+    
+    // Cache is valid for 1 hour
+    const CACHE_DURATION = 1000 * 60 * 60; // 1 hour
+    const now = Date.now();
+    const isCacheValid = cached && cacheTimestamp && (now - parseInt(cacheTimestamp)) < CACHE_DURATION;
+
+    if (isCacheValid) {
+      try {
+        projects.value = JSON.parse(cached);
+        loading.value = false;
+        return; // Use cached data, no need to fetch
+      } catch (e) {
+        // If parsing fails, clear cache
+        sessionStorage.removeItem('projects-cache');
+        sessionStorage.removeItem('projects-cache-timestamp');
+      }
+    }
+  }
+
+  // Fetch fresh data
+  try {
+    const data = await $fetch<Project[]>('/api/projects');
+    projects.value = data;
+    
+    // Cache the data on client side
+    if (process.client) {
+      const now = Date.now();
+      sessionStorage.setItem('projects-cache', JSON.stringify(data));
+      sessionStorage.setItem('projects-cache-timestamp', now.toString());
+    }
+  } catch (err) {
+    error.value = 'Failed to fetch projects';
+    console.error('Error fetching projects:', err);
+    
+    // Try to use stale cache as fallback
+    if (process.client) {
+      const cached = sessionStorage.getItem('projects-cache');
+      if (cached) {
+        try {
+          projects.value = JSON.parse(cached);
+        } catch (e) {
+          // Clear corrupted cache
+          sessionStorage.removeItem('projects-cache');
+          sessionStorage.removeItem('projects-cache-timestamp');
+        }
+      }
+    }
+  } finally {
+    loading.value = false;
+  }
+};
+
+// Fetch projects on page load
+await fetchProjects();
 </script>
 <script defer lang="ts">
 
@@ -33,7 +89,15 @@ const { data: projects } = await useAsyncData('projects', async () => {
             <h1 class="text-xl font-medium flex-wrap">Check out some projects I'm working on.</h1>
           </div>
           <div class="py-1"></div>
-          <TransitionGroup name="fade" tag="div" class="w-full grid justify-center p-4 projects-grid"
+          <div v-if="loading" class="flex justify-center items-center py-8">
+            <div class="text-slate-300">Loading projects...</div>
+          </div>
+
+          <div v-else-if="error" class="flex justify-center items-center py-8">
+            <div class="text-red-400">{{ error }}</div>
+          </div>
+
+          <TransitionGroup v-else name="fade" tag="div" class="w-full grid justify-center p-4 projects-grid"
             style="gap: 0.55em;">
             <div v-for="(project, i) in projects" :key="project.source"
               class="transform transition-transform duration-300" :style="{ transitionDelay: (i * 100) + 'ms' }">
