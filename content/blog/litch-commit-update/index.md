@@ -14,7 +14,7 @@ author: Riley
 
 # Litch Engine Update - Major Changes
 
-Recently, I've been working on significant improvements to the **Litch** game engine. This is a summary of the changes between commits 736796e and 851a05f.
+Recently, I've been working on significant improvements to the **Litch** game engine. This is a summary of the changes between commits [736796e](https://github.com/CodeByRiley/LitchJava/commit/736796e156e0ae13f1e1dcccce2119d71818d6bd) and [851a05f](https://github.com/CodeByRiley/LitchJava/commit/851a05f77e49a7c685e89f0cca195426275efcb2).
 
 ---
 
