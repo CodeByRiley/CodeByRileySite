@@ -3,11 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxi build",
-    "dev": "nuxi dev",
-    "dev:https": "nuxi dev --https",
-    "generate": "nuxi generate",
-    "preview": "nuxi preview",
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "dev:https": "nuxt dev --https",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
     "generate-projects": "node scripts/generate-projects.js"
   },
   "dependencies": {
@@ -16,7 +16,6 @@
     "@octokit/rest": "^20.0.2",
     "@vercel/analytics": "^1.5.0",
     "better-sqlite3": "^12.2.0",
-    "nuxi": "^3.25.1",
     "nuxt": "^3.6.5",
     "nuxt-vercel-analytics": "^1.0.3"
   },
